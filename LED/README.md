@@ -5,9 +5,9 @@ Em algum momento do seu dia, certamente você teve de ligar algum aparelho eletr
 Então, iremos juntos entender um pouco mais a respeito desse componente eletrônico que nos rodeia no mundo atual.
 
 <div align="center">
-<h3>Figura 1: Olhar digital </h3>	
+<h3>Figura 1: LED verde </h3>	
 <img width="1263" height="545" alt="Image" src="https://github.com/user-attachments/assets/51263185-0ae2-40e7-b2e6-5268894e8a32"/>
-<h4>Fonte: Nome da fonte </h4>
+<h4>Fonte: Olhar digital </h4>
 </div>
 
 # O que é o LED?
