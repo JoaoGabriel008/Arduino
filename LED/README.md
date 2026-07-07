@@ -30,6 +30,12 @@ A estrutura de um LED , como está na Figura 2, é composta por um **ânodo (ter
 
 Os LEDs funcionam por meio da **eletroluminescência**, que é a emissão de luz quando uma corrente elétrica passa por um material semicondutor. Um “LED” possui duas camadas de material semicondutor: uma do tipo **p** (positiva) e outra do tipo **n** (negativa). Quando uma tensão elétrica é aplicada, os elétrons se movimentam e encontram as lacunas na junção entre essas camadas.
 
+<div align="center">
+<h3>Figura 3: Funcionamento do LED </h3>	
+<img width="1263" height="545" alt="Image" src="https://github.com/user-attachments/assets/74354624-f65c-4574-8d23-3f07f8dee9bf" />
+<h4>Fonte: Google </h4>
+</div>
+
 Quando elétrons e lacunas se encontram, eles se recombinam e liberam energia na forma de luz. Essa luz é formada por pequenas partículas chamadas **fótons**. A cor da luz emitida pelo “LED” depende do material utilizado em sua fabricação. Cada material libera uma quantidade diferente de energia, produzindo cores diferentes, como vermelho, verde, azul ou branco.
 
 <div align="center">
@@ -40,17 +46,7 @@ Quando elétrons e lacunas se encontram, eles se recombinam e liberam energia na
 
 # Simulação
 
-Agora que compreendemos melhor sobre o “LED” e seu funcionamento, vamos juntos ver na prática como podemos aplicá-lo em um **arduino** (uma plataforma para criar projetos eletrônicos, com hardware e software fáceis de usar) e criar um contador binário, conforme o modelo a seguir: 
-
-<div align="center">
-<h3>Figura 4: Simulação do contador binário </h3>	
-<img width="1263" height="545" alt="Image" src="https://github.com/user-attachments/assets/716d9430-5a8f-4ca1-ac60-b6042b712f5f"/>
-<h4>Fonte: Autoria Própria </h4>
-</div>
-
-Para essa simulação, estaremos utilizando o **Tinkercad**, uma ferramenta virtual que possibilita a criação de protótipos de arduínos sem a necessidade de possuí-los fisicamente. É uma ótima maneira de criar modelos 3D, simular circuitos eletrônicos e programar microcontroladores. 
-
-Antes de começar, primeiramente precisamos separar os materiais necessários para a montagem do contador. Aqui vai a lista:
+Agora que compreendemos melhor sobre o “LED” e seu funcionamento, vamos juntos ver na prática como podemos aplicá-lo em um **arduino** (uma plataforma para criar projetos eletrônicos, com hardware e software fáceis de usar) e criar um contador binário. Mas antes de começar, primeiramente precisamos separar os materiais necessários para a montagem do circuito. Aqui vai a lista:  
 
 # Lista de Materias:
 
@@ -60,7 +56,16 @@ Antes de começar, primeiramente precisamos separar os materiais necessários pa
 - 1 protoboard(Placa de ensaio);
 - 1 arduino;
 
-Agora, com o material separado, faça as devidas conexões entre o arduíno e o Protoboard. Não se esqueça de conectar o “**GND**” (terra) e os respectivos resistores ao seus “LEDS”. Mantenha a organização de cabos alterando as cores de cada um, assim, irá facilitar na compreensão da simulação e ajudar na hora de identificar algum erro.
+
+Para essa simulação, estaremos utilizando o **Tinkercad**, uma ferramenta virtual que possibilita a criação de protótipos de arduínos sem a necessidade de possuí-los fisicamente. É uma ótima maneira de criar modelos 3D, simular circuitos eletrônicos e programar microcontroladores. 
+
+<div align="center">
+<h3>Figura 5: Contador binário com LED </h3>	
+<img width="1263" height="545" alt="Image" src="https://github.com/user-attachments/assets/bec75950-b2e2-43a7-adb7-ea2843173268" />
+<h4>Fonte: Autoria própria </h4>
+</div>
+
+Agora, com o material separado, faça as conexões entre o Arduino e a protoboard conforme a Figura 5. Conecte o pino “**GND**” (terra) do Arduino ao barramento negativo da protoboard. Em seguida, ligue cada LED ao respectivo pino digital do Arduino por meio de um **resistor**, mantendo o **ânodo** do LED conectado ao resistor e o **cátodo** ao “**GND**”. Organize os cabos utilizando cores diferentes para facilitar a identificação das conexões e a correção de possíveis erros durante a montagem. 
 
 # Código 
 
@@ -91,12 +96,16 @@ for (int num = 0; num < 8; num++) {
 ```
 O programa vai fazer uma contagem de um valor que inicia no 0 e repete acrescentando 1 enquanto seu valor for menor que 8. Ou seja, o código dentro do “**for**” vai rodar 8 vezes (0, 1, 2, 3, 4, 5, 6, 7).
 
+Neste momento, estamos entrando em contato com a linguagem nativa dos computadores, através da utilização de Bits que trata-se do menor unidade de informação que um computador pode armazenar e processar, podendo assumir apenas dois estados: 0 ou 1.
+
 ```cpp
     int b0 = num % 2;       
     int b1 = (num / 2) % 2;  
     int b2 = (num / 4) % 2;
 ```
-Neste momento, estamos entrando em contato com a linguagem nativa dos computadores, através da utilização de Bits que trata-se do menor unidade de informação que um computador pode armazenar e processar, podendo assumir apenas dois estados: 0 ou 1. Com isso: 
+ Cada uma dessas variáveis representa um bit do número armazenado em um ‘num’. Como cada bit só pode assumir os valores de 0 ou 1, o programa separa o número decimal em sua forma binária, identificando quais posições devem ficar ligadas ou desligadas. Nesse caso, ‘b0’ corresponde ao bit de valor 1, ‘b1’ ao bit de valor 2 e ‘b2’ ao bit de valor 4. Assim, os LEDs podem representar os números de 0 a 7, de acordo com a combinação binária formada. 
+
+ Com isso:
 
 - b0 - Pega o bit da direita do número
 - b1 - Pega o bit do meio (primeiro divide por 2, depois pega o resto da divisão por 2)
