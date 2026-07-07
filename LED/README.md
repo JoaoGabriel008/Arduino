@@ -39,7 +39,7 @@ Os LEDs funcionam por meio da **eletroluminescência**, que é a emissão de luz
 Quando elétrons e lacunas se encontram, eles se recombinam e liberam energia na forma de luz. Essa luz é formada por pequenas partículas chamadas **fótons**. A cor da luz emitida pelo “LED” depende do material utilizado em sua fabricação. Cada material libera uma quantidade diferente de energia, produzindo cores diferentes, como vermelho, verde, azul ou branco.
 
 <div align="center">
-<h3>Figura 3: LEDs coloridos </h3>	
+<h3>Figura 4: LEDs coloridos </h3>	
 <img width="1263" height="545" alt="Image" src="https://github.com/user-attachments/assets/74bfac0e-e709-465d-bb2a-bc820b6d889f" />
 <h4>Fonte: Google </h4>
 </div>
