@@ -14,9 +14,9 @@ Então, iremos juntos entender um pouco mais a respeito desse componente eletrô
 
 Para começarmos a decifrar esse componente, primeiramente precisaremos entender o significado de seu nome. Os “LEDs”, ou **Diodos Emissores de Luz**(Light Emitting Diodes), são dispositivos semicondutores que convertem **energia elétrica** em **luz visível**. 
 
-São especialmente utilizados em produtos de **microeletrônica** como sinalizador de avisos, também podem ser encontrados em tamanho maior, como em alguns modelos de semáforos. Além disso, o led é amplamente utilizado em painéis, cortinas, pistas e postes de iluminação pública, contribuindo para uma redução significativa no consumo de energia elétrica. 
+Devido às suas características, os LEDs são amplamente utilizados em diversas áreas. Na **microeletrônica**, atuam como sinalizadores de funcionamento e avisos em equipamentos eletrônicos. Além disso, também são empregados em sistemas de iluminação residencial, comercial e pública, bem como em painéis eletrônicos, cortinas de LED, semáforos e pistas de sinalização, contribuindo para a redução do consumo de energia elétrica graças à sua alta eficiência energética. 
 
-# Estrutura do LED
+# Funcionamento do LED
 
 <div align="center">
 <h3>Figura 2: Estrutura do LED </h3>	
@@ -24,11 +24,9 @@ São especialmente utilizados em produtos de **microeletrônica** como sinalizad
 <h4>Fonte: Wikipédia </h4>
 </div>
 
-A estrutura de um LED , como está na Figura 2, é composta por um **ânodo (terminal positivo)** e um **cátodo (terminal negativo)**, entre os quais está localizada uma junção semicondutora (interface onde dois materiais semicondutores com propriedades elétricas opostas se encontram).
+A estrutura de um LED, ilustrada na **Figura 2**, é composta por um **ânodo** (terminal positivo) e um **cátodo** (terminal negativo). Entre esses terminais encontra-se uma junção semicondutora, formada pela união de uma camada de material do tipo **p** (positiva) e outra do tipo **n** (negativa), responsável pelo funcionamento do dispositivo.
 
-# Funcionamento do LED
-
-Os LEDs funcionam por meio da **eletroluminescência**, que é a emissão de luz quando uma corrente elétrica passa por um material semicondutor. Um “LED” possui duas camadas de material semicondutor: uma do tipo **p** (positiva) e outra do tipo **n** (negativa). Quando uma tensão elétrica é aplicada, os elétrons se movimentam e encontram as lacunas na junção entre essas camadas.
+O funcionamento do LED baseia-se no fenômeno da **eletroluminescência**, que consiste na emissão de luz quando uma corrente elétrica atravessa a junção semicondutora. Ao ser aplicada uma tensão elétrica entre o ânodo e o cátodo, elétrons e lacunas deslocam-se em direção à junção. Nesse processo, ocorre a recombinação dessas cargas, liberando energia na forma de **luz visível**. 
 
 <div align="center">
 <h3>Figura 3: Funcionamento do LED </h3>	
@@ -38,15 +36,9 @@ Os LEDs funcionam por meio da **eletroluminescência**, que é a emissão de luz
 
 Quando elétrons e lacunas se encontram, eles se recombinam e liberam energia na forma de luz. Essa luz é formada por pequenas partículas chamadas **fótons**. A cor da luz emitida pelo “LED” depende do material utilizado em sua fabricação. Cada material libera uma quantidade diferente de energia, produzindo cores diferentes, como vermelho, verde, azul ou branco.
 
-<div align="center">
-<h3>Figura 4: LEDs coloridos </h3>	
-<img width="1263" height="545" alt="Image" src="https://github.com/user-attachments/assets/74bfac0e-e709-465d-bb2a-bc820b6d889f" />
-<h4>Fonte: Google </h4>
-</div>
-
 # Simulação
 
-Agora que compreendemos melhor sobre o “LED” e seu funcionamento, vamos juntos ver na prática como podemos aplicá-lo em um **arduino** (uma plataforma para criar projetos eletrônicos, com hardware e software fáceis de usar) e criar um contador binário. Mas antes de começar, primeiramente precisamos separar os materiais necessários para a montagem do circuito. Aqui vai a lista:  
+Agora que compreendemos melhor sobre o “LED” e seu funcionamento, vamos juntos ver na prática como podemos aplicá-lo em um **arduino** (uma plataforma para criar projetos eletrônicos, com hardware e software fáceis de usar) e criar um **contador binário**. Mas antes de começar, primeiramente precisamos separar os materiais necessários para a montagem do circuito. Aqui vai a lista:  
 
 # Lista de Materias:
 
@@ -57,28 +49,28 @@ Agora que compreendemos melhor sobre o “LED” e seu funcionamento, vamos junt
 - 1 arduino;
 
 
-Para essa simulação, estaremos utilizando o **Tinkercad**, uma ferramenta virtual que possibilita a criação de protótipos de arduínos sem a necessidade de possuí-los fisicamente. É uma ótima maneira de criar modelos 3D, simular circuitos eletrônicos e programar microcontroladores. 
+Para essa simulação, estaremos utilizando o **Tinkercad**, uma ferramenta virtual que possibilita a criação de protótipos de arduínos sem a necessidade de possuí-los fisicamente.
 
 <div align="center">
-<h3>Figura 5: Contador binário com LED </h3>	
+<h3>Figura 4: Contador binário com LED </h3>	
 <img width="1263" height="545" alt="Image" src="https://github.com/user-attachments/assets/bec75950-b2e2-43a7-adb7-ea2843173268" />
 <h4>Fonte: Autoria própria </h4>
 </div>
 
-Agora, com o material separado, faça as conexões entre o Arduino e a protoboard conforme a Figura 5. Conecte o pino “**GND**” (terra) do Arduino ao barramento negativo da protoboard. Em seguida, ligue cada LED ao respectivo pino digital do Arduino por meio de um **resistor**, mantendo o **ânodo** do LED conectado ao resistor e o **cátodo** ao “**GND**”. Organize os cabos utilizando cores diferentes para facilitar a identificação das conexões e a correção de possíveis erros durante a montagem. 
+Agora, com o material separado, faça as conexões entre o Arduino e a protoboard conforme a **Figura 5**. Inicialmente, conecte o pino **GND** (terra) do Arduino ao barramento negativo da protoboard. Em seguida, conecte três pinos digitais do Arduino aos **ânodos** dos LEDs (vermelho, verde e amarelo), **utilizando um resistor em série para cada LED**. Os **cátodos** dos LEDs devem ser conectados ao barramento negativo (GND) da protoboard, completando o circuito. Por fim, organize os cabos utilizando cores diferentes para facilitar a identificação das conexões e a correção de possíveis erros durante a montagem. 
 
 # Código 
 
 Após montado, partimos para a construção do código. E é aqui, onde daremos vida ao nosso contador. Por isso, fique atento aos detalhes!
 
-Primeiro, definimos as variáveis que iremos utilizar e atribuímos a portal digital de saída do arduíno:
+Primeiro, definimos as variáveis que iremos utilizar e atribuímos a porta digital de saída do arduíno:
 
 ```cpp
 int led1 = 2;
 int led2 = 3;
 int led3 = 4;
 ```
-Em seguida, iremos para a função ‘void setup()’, onde ela é executada somente uma vez assim que a placa é ligada ou reiniciada, servindo para preparar o sistema antes do código principal rodar. 
+Em seguida, iremos para a função ‘void setup()’, onde ela é executada somente uma vez assim que a placa é ligada ou reiniciada, servindo para preparar o sistema antes do código principal rodar.
 
 ```cpp
 void setup() {
@@ -87,7 +79,7 @@ void setup() {
   pinMode(led3, OUTPUT);
 }
 ```
-Aqui, atribuímos as nossas variáveis à função ‘pinMode’, que será um comando essencial para configurar um pino específico funcionar como saída (enviando sinais) com o modo “**OUTPUT**”. 
+Aqui, utilizamos a função pinMode para configurar os pinos representados por nossas variáveis, definindo seu modo de operação como **OUTPUT**(saída). 
 
 Partindo para a função ‘void loop()’, iremos inserir o código principal que será executado repetidamente em ciclo contínuo. Começando com um laço de repetição: 
 
@@ -96,22 +88,22 @@ for (int num = 0; num < 8; num++) {
 ```
 O programa vai fazer uma contagem de um valor que inicia no 0 e repete acrescentando 1 enquanto seu valor for menor que 8. Ou seja, o código dentro do “**for**” vai rodar 8 vezes (0, 1, 2, 3, 4, 5, 6, 7).
 
-Neste momento, estamos entrando em contato com a linguagem nativa dos computadores, através da utilização de Bits que trata-se do menor unidade de informação que um computador pode armazenar e processar, podendo assumir apenas dois estados: 0 ou 1.
+Neste momento, estamos entrando em contato com a linguagem nativa dos computadores, através da utilização de Bits que trata-se da menor unidade de informação que um computador pode armazenar e processar, podendo assumir apenas dois estados: 0 ou 1.
 
 ```cpp
     int b0 = num % 2;       
     int b1 = (num / 2) % 2;  
     int b2 = (num / 4) % 2;
 ```
- Cada uma dessas variáveis representa um bit do número armazenado em um ‘num’. Como cada bit só pode assumir os valores de 0 ou 1, o programa separa o número decimal em sua forma binária, identificando quais posições devem ficar ligadas ou desligadas. Nesse caso, ‘b0’ corresponde ao bit de valor 1, ‘b1’ ao bit de valor 2 e ‘b2’ ao bit de valor 4. Assim, os LEDs podem representar os números de 0 a 7, de acordo com a combinação binária formada. 
+ Cada uma dessas variáveis representa um bit do número armazenado em um ‘num’. Como cada bit só pode assumir os valores de 0 ou 1, o programa separa o número decimal em sua forma binária, identificando quais posições devem ficar ligadas (1) ou desligadas (0). Nesse contexto: 
 
- Com isso:
+- b0 corresponde ao bit menos significativo
+- b1  corresponde ao bit do meio
+- b2 corresponde ao bit mais significativo
 
-- b0 - Pega o bit da direita do número
-- b1 - Pega o bit do meio (primeiro divide por 2, depois pega o resto da divisão por 2)
-- b2 - Pega o bit da esquerda (primeiro divide por 4, depois pega o resto da divisão por 2)
+Para obter o bit b0, que já ocupa a posição menos significativa, basta extrair diretamente o resto da divisão do número por 2. No caso de b1, o programa divide o número por 2 para aplicar um deslocamento de uma posição para a direita, alinhando o bit do meio na casa inicial para então isolá-lo com o resto da divisão por 2. O mesmo princípio se aplica a b2, onde a divisão por 4 realiza um deslocamento de duas posições para a direita, trazendo o bit mais significativo para a primeira casa, onde ele é finalmente capturado pelo resto da divisão por 2. 
 
-Assim, chegando a penúltima função, o ‘digitalWrite()’ que serve para enviar um sinal elétrico (nível lógico) para um pino digital. Ele vai ligar ou desligar o LED de acordo com a variável:
+Assim, chegando a penúltima função, o ‘digitalWrite()’ que envia um sinal elétrico (nível lógico alto ou baixo) para um pino digital. Ela vai ligar ou desligar o LED de acordo com o valor (0 ou 1) armazenado nas variáveis: 
 
 ```cpp
     digitalWrite(led1, b0);
